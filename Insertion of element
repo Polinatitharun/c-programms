@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main() {
+    int array[MAX_SIZE];
+    int size, element, position;
+
+
+    scanf("%d", &size);
+
+    if (size <= 0 || size > MAX_SIZE) {
+        printf("Invalid size!\n");
+        return 0;
+    }
+
+
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &array[i]);
+    }
+
+
+    scanf("%d", &element);
+
+  
+    scanf("%d", &position);
+
+    if (position < 0 || position > size) {
+        printf("Invalid position!\n");
+        return 0;
+    }
+
+    
+    for (int i = size - 1; i >= position; i--) {
+        array[i + 1] = array[i];
+    }
+
+    
+    array[position] = element;
+
+    size++; 
+
+   
+    for (int i = 0; i < size; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
